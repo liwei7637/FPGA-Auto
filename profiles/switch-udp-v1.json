@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "switch-udp-v1",
+  "vivado_version": "2020.2",
+  "part": "xcku040",
+  "cores": {
+    "traffic": {
+      "kind": "vio",
+      "cell": "u_config_vio/u_vio",
+      "uuid": "E57A6309BDE7529898965DF9F50F9CDA",
+      "ports": {
+        "in0": 32,
+        "in1": 256,
+        "in2": 256,
+        "in3": 48,
+        "in4": 32,
+        "in5": 32,
+        "in6": 32,
+        "out0": 48,
+        "out1": 32,
+        "out2": 32,
+        "out3": 32,
+        "out4": 32,
+        "out5": 16,
+        "out6": 16,
+        "out7": 16,
+        "out8": 1,
+        "out9": 32,
+        "out10": 32,
+        "out11": 64,
+        "out12": 32,
+        "out13": 32,
+        "out14": 4
+      },
+      "clock_hz": 200000000
+    },
+    "rx": {
+      "kind": "ila",
+      "cell": "u_debug/u_ila_rx",
+      "uuid": "BCD0118C805650C2A73758346289E54B",
+      "ports": {
+        "in0": 64,
+        "in1": 64,
+        "in2": 24,
+        "in3": 82,
+        "in4": 32,
+        "in5": 64,
+        "in6": 32
+      },
+      "clock_hz": 200000000
+    },
+    "status": {
+      "kind": "ila",
+      "cell": "u_debug/u_ila_status",
+      "uuid": "44DB504711A55F84A173C54B1BB87239",
+      "ports": {
+        "in0": 4,
+        "in1": 5,
+        "in2": 4,
+        "in3": 32
+      },
+      "clock_hz": 50000000
+    },
+    "tx": {
+      "kind": "ila",
+      "cell": "u_debug/u_ila_tx",
+      "uuid": "81A72ED6138A59ACBA86B661AF05B94C",
+      "ports": {
+        "in0": 64,
+        "in1": 64,
+        "in2": 24,
+        "in3": 82,
+        "in4": 32,
+        "in5": 64,
+        "in6": 32
+      },
+      "clock_hz": 200000000
+    },
+    "ping": {
+      "kind": "ila",
+      "cell": "u_udp_stack/u_eth_stack/icmp_echo_reply_inst/g_ping_debug.u_ila_ping",
+      "uuid": "6960F9A8F69A5FA8B5A6C8E2F8D86DD1",
+      "ports": {
+        "in0": 64,
+        "in1": 64,
+        "in2": 24,
+        "in3": 82,
+        "in4": 32,
+        "in5": 64,
+        "in6": 32
+      },
+      "clock_hz": 200000000
+    },
+    "arp": {
+      "kind": "ila",
+      "cell": "u_udp_stack/u_eth_stack/udp_complete_inst/ip_complete_64_inst/arp_inst/g_arp_debug.u_ila_arp",
+      "uuid": "6BD86554B3115285A5501B66BF59DBE1",
+      "ports": {
+        "in0": 64,
+        "in1": 64,
+        "in2": 24,
+        "in3": 82,
+        "in4": 32,
+        "in5": 64,
+        "in6": 32
+      },
+      "clock_hz": 200000000
+    }
+  },
+  "plugin": "switch_udp_v1",
+  "clock_hz": 200000000,
+  "default_gap_cycles": 80,
+  "provenance": "Debug layout from RUN-20261106-DUAL-UDP-01; firmware identity is not proven by UUID alone"
+}

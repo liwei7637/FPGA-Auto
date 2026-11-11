@@ -1,0 +1,67 @@
+{
+  "version": "1.4.3",
+  "date": "2026-11-11",
+  "scope": "Source integration and offline unit validation only",
+  "vivado_invoked": false,
+  "hardware_accessed": false,
+  "full_suite_passed": false,
+  "runs": [
+    {
+      "python": "3.8.10",
+      "suite": "core",
+      "tests_run": 100,
+      "passed": true,
+      "skipped": [],
+      "failures": [],
+      "errors": [],
+      "host_excluded": [
+        "test_background.BackgroundTests.test_background_outlives_submitter_and_finishes",
+        "test_background.BackgroundTests.test_background_timeout_preserves_failure_and_kills_children",
+        "test_background.BackgroundTests.test_busy_project_does_not_launch_second_build",
+        "test_background.BackgroundTests.test_cancel_cleans_worker_process_tree",
+        "test_bitstream.BitstreamTests.test_background_preserves_build_bit_option_and_event_artifact",
+        "test_monitor.MonitorTests.test_detached_monitor_survives_submitter_and_reuses_same_job",
+        "test_monitor.MonitorTests.test_http_is_read_only_and_bound_to_token_and_loopback_host",
+        "test_wakeup.WakeupHarnessTests.test_single_worker_waits_for_turn_end_then_finishes"
+      ]
+    },
+    {
+      "python": "3.14.7",
+      "suite": "core",
+      "tests_run": 100,
+      "passed": true,
+      "skipped": 10,
+      "failures": [],
+      "errors": [],
+      "host_excluded": [
+        "test_background.BackgroundTests.test_background_outlives_submitter_and_finishes",
+        "test_background.BackgroundTests.test_background_timeout_preserves_failure_and_kills_children",
+        "test_background.BackgroundTests.test_busy_project_does_not_launch_second_build",
+        "test_background.BackgroundTests.test_cancel_cleans_worker_process_tree",
+        "test_bitstream.BitstreamTests.test_background_preserves_build_bit_option_and_event_artifact",
+        "test_monitor.MonitorTests.test_detached_monitor_survives_submitter_and_reuses_same_job",
+        "test_monitor.MonitorTests.test_http_is_read_only_and_bound_to_token_and_loopback_host",
+        "test_wakeup.WakeupHarnessTests.test_single_worker_waits_for_turn_end_then_finishes"
+      ]
+    },
+    {
+      "python": "3.14.7",
+      "suite": "debug",
+      "tests_run": 33,
+      "passed": true,
+      "skipped": [],
+      "failures": [],
+      "errors": [],
+      "host_excluded": [
+        "test_debug.DebugWorkerTests (detached session workers)",
+        "test_debug_mcp (SDK/transport integration; not included in this restricted unit profile)"
+      ]
+    }
+  ],
+  "limitations": [
+    "Native detached-worker and loopback integration are blocked by the execution host (WinError 5 / 10013).",
+    "The unfiltered Python 3.8 core suite ran 101 tests: 93 passed; 8 host-dependent cases failed or errored before the new 7-case Tcl suite was added.",
+    "MCP SDK/STDIO integration attempts did not complete in this host; bounded/interactive test processes were stopped. No SDK integration pass is claimed.",
+    "No real-project quick/synthesis/place/route/BIT or multi-computer hardware validation was performed for this release."
+  ]
+}

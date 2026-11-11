@@ -1,0 +1,24 @@
+# Each computer keeps its own runtimes, dependencies and job state.
+runtime/
+vendor/
+.venv/
+__pycache__/
+*.py[cod]
+.fpga/
+.vivado-debug/
+fpga.json
+profiles/*
+!profiles/switch-udp-v1.json
+build/
+dist/
+*.log
+*.jou
+*.str
+*.dcp
+*.bit
+*.bin
+*.ltx
+!tests/fixtures/**/*.ltx
+*.zip
+*.partial
+*.tmp

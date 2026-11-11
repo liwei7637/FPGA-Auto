@@ -1,0 +1,9 @@
+# Replace all project paths. This is an example, not an installed configuration.
+# Default mock mode: no hardware connection. Keep the original FPGA Auto CLI.
+[mcp_servers.vivado-debug]
+command = "D:/tools/FPGA-Auto/.venv/Scripts/python.exe"
+args = ["-B", "-X", "utf8", "D:/tools/FPGA-Auto/mcp_server.py", "--root", "C:/Work/Project"]
+env_vars = ["CODEX_APP_TOOLS_PIPE_PATH", "CODEX_APP_TOOLS_CALLER_HOST_ID"]
+startup_timeout_sec = 20
+tool_timeout_sec = 90
+supports_parallel_tool_calls = false

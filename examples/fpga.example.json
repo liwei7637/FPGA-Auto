@@ -1,0 +1,8 @@
+{
+  "vivado_version": "2020.2",
+  "project": "fpga/design/design.xpr",
+  "synth_run": "synth_1",
+  "impl_run": "impl_1",
+  "jobs": 8,
+  "state_dir": "fpga/design/.fpga"
+}

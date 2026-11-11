@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FPGA Auto · 任务监控</title>
+<style>
+:root{color-scheme:dark;--bg:#101619;--panel:#192226;--line:#2b373b;--muted:#91a4aa;--text:#e7eeeb;--green:#b7ed8c;--cyan:#82d6d0;--red:#ff9b96;--amber:#f0ce87}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 "Segoe UI","Microsoft YaHei",sans-serif}button,input,select{font:inherit}button,select{color:var(--text);background:#202d32;border:1px solid #3c4b50;border-radius:6px;padding:6px 11px}button{cursor:pointer}button:hover{border-color:var(--cyan)}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}header{border-bottom:1px solid var(--line);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{font-size:18px;letter-spacing:.4px;font-weight:650}.brand b{color:var(--green)}.brand span{font-size:11px;font-weight:400;letter-spacing:2px;color:var(--muted);margin-left:20px}.connection{color:var(--muted);font-size:12px;display:flex;gap:9px;align-items:center}.dot{height:7px;width:7px;border-radius:50%;background:var(--green)}main{max-width:1500px;margin:auto;padding:28px 32px}.eyebrow{font-size:11px;letter-spacing:1.8px;color:var(--muted)}.heading{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:7px 0 4px}h1{font-size:28px;font-weight:600;letter-spacing:-.5px;margin:0;overflow-wrap:anywhere}.badge{padding:5px 13px;border:1px solid #536944;background:#273522;color:var(--green);border-radius:30px;white-space:nowrap}.badge.error{color:var(--red);background:#3a2626;border-color:#734741}.badge.waiting{color:var(--amber);border-color:#715d39;background:#332e21}.path{color:var(--muted);font:12px/1.6 Consolas,monospace;overflow-wrap:anywhere}.job{margin-top:4px;font-size:11px}.overview{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:20px;margin:24px 0 20px;padding:18px 22px;background:var(--panel);border:1px solid var(--line);border-radius:10px}.metric+.metric{border-left:1px solid var(--line);padding-left:24px}.metric-label{font-size:12px;color:var(--muted);margin-bottom:5px}.metric-value{font-size:22px;line-height:1.4}.metric-value small{font-size:12px;color:var(--muted);margin-left:8px}.clock{font-family:Consolas,monospace;letter-spacing:1px}.progress-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px}.progress-top strong{font-size:16px;font-weight:500}.progress-top span{color:var(--muted);font-size:12px}.track{height:7px;border-radius:5px;background:#2a3539;overflow:hidden}.fill{height:100%;width:0;background:var(--green);transition:width .7s ease}.phases{display:grid;grid-template-columns:repeat(var(--count,5),1fr);gap:9px;margin:16px 0 10px}.phase{padding:12px 14px;border:1px solid var(--line);border-radius:7px;color:#7f9298;display:flex;align-items:center;gap:10px}.phase em{font:12px Consolas,monospace;font-style:normal;border:1px solid #445459;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}.phase.done{color:var(--green)}.phase.done em{border-color:#647b51;background:#263922}.phase.active{color:var(--cyan);border-color:#488882;background:#1b302f}.phase.active em{border-color:var(--cyan);animation:pulse 1.8s ease-in-out infinite}.phase.stopped{color:var(--red);border-color:#734741}.note{font-size:12px;color:var(--muted)}.summary{display:none;margin-top:14px;padding:12px 16px;border-radius:7px;background:#203025;border:1px solid #46603c;color:var(--green);white-space:pre-wrap;overflow-wrap:anywhere}.summary.error{background:#312323;border-color:#704541;color:var(--red)}.demo{display:none;padding:10px 16px;background:#393322;color:var(--amber);border:1px solid #73623e;border-radius:7px;margin-bottom:18px}.log-panel{margin-top:24px;border:1px solid #34434a;border-radius:10px;overflow:hidden;background:#0c1215}.log-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 18px;background:#1b262b;border-bottom:1px solid var(--line)}.log-title{font-size:15px;font-weight:600}.live-tag{font:10px Consolas,monospace;letter-spacing:1px;color:var(--cyan);margin-left:10px}.log-actions{display:flex;gap:8px;align-items:center}.toolbar{padding:10px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;border-bottom:1px solid var(--line)}.toolbar select{min-width:148px}.toolbar input[type=search]{width:210px;min-width:120px;background:#141e22;border:1px solid #35464c;color:var(--text);border-radius:6px;padding:7px 10px}.toolbar label{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:5px}.toolbar input[type=checkbox]{accent-color:var(--green)}.log-body{height:clamp(260px,36vh,550px);overflow:auto;padding:16px 20px;font:12px/1.8 Consolas,"Microsoft YaHei",monospace;tab-size:4;white-space:pre;color:#c1cfcf}.log-body.wrap{white-space:pre-wrap;overflow-wrap:anywhere}.log-line.error{color:var(--red)}.log-line.warning{color:var(--amber)}.log-line.source{color:var(--cyan);font-weight:600}.log-footer{padding:9px 18px;display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}footer{display:flex;justify-content:space-between;gap:15px;margin-top:15px;font-size:11px;color:#83969d}.offline{color:var(--red)}@keyframes pulse{50%{box-shadow:0 0 0 5px #82d6d015}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}@media(max-width:740px){header{padding:16px 18px}.brand span{display:none}main{padding:22px 18px}h1{font-size:23px}.overview{gap:10px;padding:16px 12px}.metric+.metric{padding-left:12px}.metric-value{font-size:17px}.phases{grid-template-columns:1fr 1fr}.log-heading{align-items:flex-start;flex-direction:column}.log-body{padding:12px}.toolbar{padding:10px}.toolbar input[type=search]{width:160px}footer{flex-direction:column}.progress-top span{max-width:55%;text-align:right}}</style>
+<style>
+@media(max-width:740px){header{padding:12px 16px}main{padding:16px}.demo{padding:8px 12px;margin-bottom:14px;font-size:12px}.overview{margin:16px 0;padding:12px}.metric-value{font-size:16px}.phases{grid-template-columns:repeat(var(--count,5),1fr);gap:5px;margin:12px 0 8px}.phase{flex-direction:column;gap:5px;padding:8px 3px;text-align:center;font-size:10px}.phase em{height:19px;width:19px;font-size:10px}.log-panel{margin-top:16px}.log-heading{padding:12px;gap:8px}.log-actions{gap:5px}.log-actions button{font-size:12px;padding:5px 9px}.toolbar{gap:8px}.toolbar select{min-width:110px;font-size:12px}.toolbar input[type=search]{font-size:12px}.path{font-size:10px}.note{font-size:11px}}
+</style>
+<header><div class="brand"><b>▥</b> FPGA Auto <span>BUILD OBSERVATORY</span></div><div class="connection"><i class="dot" id="dot"></i><span id="connection" role="status">正在连接本地任务…</span></div></header>
+<main>
+<div class="demo" id="demo">演示任务 · 以下进度与日志为模拟数据，用于查看监控效果，未运行真实 FPGA 构建。</div>
+<div class="eyebrow">任务监控 / LIVE TASK</div>
+<div class="heading"><h1 id="project">正在读取工程…</h1><span class="badge" id="badge" role="status">连接中</span></div>
+<div class="path" id="project-path"></div><div class="path job" id="job"></div>
+<div class="overview">
+ <div class="metric"><div class="metric-label">当前任务</div><div class="metric-value" id="operation">—</div></div>
+ <div class="metric"><div class="metric-label">当前阶段</div><div class="metric-value" id="stage">等待任务状态</div></div>
+ <div class="metric"><div class="metric-label">已运行时间</div><div class="metric-value clock" id="elapsed">00:00:00</div></div>
+</div>
+<div class="progress-top"><strong id="progress-label">阶段进度</strong><span id="phase-count">等待进度信息</span></div>
+<div class="track" role="progressbar" aria-label="已完成阶段进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><div class="fill" id="fill"></div></div>
+<div class="phases" id="phases"></div>
+<div class="note" id="progress-note">按实际完成阶段更新；各阶段耗时不同，此比例不代表剩余时间。</div>
+<div class="summary" id="summary" role="status"></div>
+<section class="log-panel" aria-label="任务日志">
+ <div class="log-heading"><div><span class="log-title">实时日志</span><span class="live-tag" id="live">● LIVE</span></div><div class="log-actions"><button id="pause">暂停显示</button><button id="copy">复制日志</button><button id="download">导出可见日志</button></div></div>
+ <div class="toolbar"><select id="source" aria-label="日志来源"><option value="all">全部来源</option></select><select id="level" aria-label="日志级别"><option value="all">全部级别</option><option value="warning">警告与错误</option><option value="error">仅错误</option></select><input id="search" type="search" aria-label="搜索日志" placeholder="搜索日志内容…"><label><input type="checkbox" id="follow" checked>自动滚动</label><label><input type="checkbox" id="wrap" checked>自动换行</label></div>
+ <div class="log-body wrap" id="logs" tabindex="0" aria-label="日志输出">等待第一条日志…</div>
+ <div class="log-footer"><span id="activity">每秒刷新 · 本地只读监控</span><span id="line-count">0 行</span></div>
+</section>
+<footer><span>关闭此页面不影响构建。暂停显示只暂停日志画面。</span><span id="footer-info">日志按来源分组 · 每个来源保留最近 48 KB</span></footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+let latest=null, shown=null, paused=false, lastRendered='', sourceKeys='';
+const duration=s=>[Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');
+const operations={build:'完整构建',check:'工程检查',synth:'综合',quick:'快速物理预审查',impl:'实现 / 布线',timing:'时序验收',drc:'DRC 验收',bit:'生成 bit'};
+function renderState(d){
+ latest=d;
+ $('project').textContent=d.project.split(/[\\/]/).pop()||d.project;
+ $('project-path').textContent=d.project;
+ $('job').textContent='JOB  '+d.job_id;
+ $('demo').style.display=d.demo?'block':'none';
+ $('operation').textContent=operations[d.operation]||d.operation;
+ $('stage').textContent=d.active?d.stage_label:(d.state==='completed'?'任务结束':d.stage_label);
+ $('elapsed').textContent=duration(d.elapsed_seconds);
+ const failed=d.state==='failed'||d.acceptance==='failed',cancelled=d.state==='cancelled';
+ const unknown=d.state==='completed'&&d.acceptance==='unknown'&&d.acceptance_scope!=='none';
+ const label=d.cancel_requested&&d.active?'正在取消':cancelled?'已取消':failed?(d.state==='completed'?'验收未通过':'执行失败'):unknown?'验收结果未知':d.state==='completed'?'任务完成':d.state==='created'?'准备中':'运行中';
+ $('badge').textContent=label;
+ $('badge').className='badge'+(failed?' error':cancelled||unknown?' waiting':'');
+ $('fill').style.width=d.percent+'%';
+ $('fill').style.background=failed?'var(--red)':cancelled||unknown?'var(--amber)':'var(--green)';
+ $('progress').setAttribute('aria-valuenow',d.percent);
+ $('progress-label').textContent='阶段进度 · '+d.percent+'%';
+ $('phase-count').textContent=d.completed_phases+' / '+d.total_phases+' 阶段已完成'+(d.active?' · '+d.stage_label:'');
+ $('phases').style.setProperty('--count',d.phases.length);
+ $('phases').replaceChildren(...d.phases.map((p,i)=>{const row=document.createElement('div');row.className='phase '+p.status;const num=document.createElement('em');num.textContent=p.status==='done'?'✓':p.status==='stopped'?'!':String(i+1).padStart(2,'0');const text=document.createElement('span');text.textContent=p.label;row.append(num,text);return row}));
+ const summary=$('summary');summary.style.display=d.active?'none':'block';summary.className='summary'+(failed?' error':'');
+ if(!d.active){let text=label;if(d.state==='completed'&&d.acceptance_scope==='none')text+=' · 本次仅执行指定阶段，尚未进行完整 Timing / DRC 验收。';else if(d.acceptance==='passed')text+=' · 本次要求的验收已通过。';if(d.acceptance_scope==='quick_pre_route')text+='\n本次只做布线前风险预审查；完整布线、Timing / DRC 和板测仍需分别完成。';if(d.reason)text+='\n'+d.reason+(d.message?'：'+d.message:'');if(d.bitstream?.status==='passed')text+='\nbit 文件：'+d.bitstream.path+'\n大小：'+d.bitstream.size_bytes+' 字节\nSHA-256：'+d.bitstream.sha256;else if(d.bitstream?.status&&d.bitstream.status!=='not_requested')text+='\nbit：'+({skipped:'未生成',failed:'生成失败',cancelled:'已取消',not_started:'尚未生成'}[d.bitstream.status]||d.bitstream.status);summary.textContent=text;}
+ $('activity').textContent=d.active?(d.quiet_seconds<3?'刚刚收到日志':d.quiet_seconds+' 秒没有新日志 · 仍在监控任务状态'):'任务已结束 · 可查看与导出日志';
+ $('connection').textContent='本地已连接 · '+new Date().toLocaleTimeString('zh-CN',{hour12:false});
+ $('connection').className='';$('dot').style.background='var(--green)';
+ if(!paused){shown=d;renderLogs();}
+ $('live').textContent=paused?'Ⅱ PAUSED':d.active?'● LIVE':'○ FINISHED';
+}
+function logLines(){
+ if(!shown)return [];
+ const source=$('source').value,level=$('level').value,query=$('search').value.toLowerCase();
+ const lines=[];
+ for(const log of shown.logs){if(source!=='all'&&log.key!==source)continue;let body=log.text.split(/\r?\n/).filter((line,i,all)=>i<all.length-1||line);body=body.filter(line=>{const error=/\b(error|fatal)\b|错误|失败/i.test(line),warning=error||/\bwarning\b|警告/i.test(line);return(level==='all'||(level==='error'?error:warning))&&line.toLowerCase().includes(query)});if(!body.length)continue;lines.push({text:'── '+log.label+(log.truncated?' · 仅显示末尾 48 KB':'')+' ──',kind:'source'});for(const text of body)lines.push({text,kind:/\b(error|fatal)\b|错误|失败/i.test(text)?'error':/\bwarning\b|警告/i.test(text)?'warning':''});}
+ return lines;
+}
+function renderLogs(){
+ const available=(shown?.logs||[]),keys=available.map(l=>l.key).join(',');
+ if(keys!==sourceKeys){sourceKeys=keys;const selected=$('source').value;const all=new Option('全部来源','all');$('source').replaceChildren(all,...available.map(l=>new Option(l.label,l.key)));if([...$('source').options].some(o=>o.value===selected))$('source').value=selected;}
+ const lines=logLines();const signature=JSON.stringify(lines);if(signature===lastRendered)return;lastRendered=signature;
+ const panel=$('logs'),top=panel.scrollTop;
+ if(lines.length)panel.replaceChildren(...lines.map(l=>{const el=document.createElement('div');el.className='log-line '+l.kind;el.textContent=l.text||' ';return el}));else panel.textContent=available.length?'没有符合筛选条件的日志。':'等待第一条日志…';
+ panel.scrollTop=$('follow').checked?panel.scrollHeight:top;
+ $('line-count').textContent=lines.filter(l=>l.kind!=='source').length+' 行';
+}
+$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'继续显示':'暂停显示';$('pause').setAttribute('aria-pressed',String(paused));if(!paused&&latest){shown=latest;renderLogs();}$('live').textContent=paused?'Ⅱ PAUSED':latest?.active?'● LIVE':'○ FINISHED';};
+for(const id of ['source','level','search'])$(id).addEventListener('input',renderLogs);
+$('wrap').onchange=()=>{$('logs').classList.toggle('wrap',$('wrap').checked);};
+$('follow').onchange=()=>{if($('follow').checked)$('logs').scrollTop=$('logs').scrollHeight;};
+$('logs').addEventListener('wheel',e=>{if(e.deltaY<0)$('follow').checked=false;},{passive:true});
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(logLines().map(l=>l.text).join('\n'));$('copy').textContent='已复制';}catch{$('copy').textContent='请选中日志复制';}setTimeout(()=>$('copy').textContent='复制日志',2000);};
+$('download').onclick=()=>{const blob=new Blob([logLines().map(l=>l.text).join('\n')],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=(latest?.job_id||'fpga')+'-visible.log';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+async function poll(){try{const response=await fetch('snapshot',{cache:'no-store',signal:AbortSignal.timeout(5000)});if(!response.ok)throw Error('HTTP '+response.status);const d=await response.json();if(d.error)throw Error(d.error);renderState(d);}catch(e){$('connection').textContent='连接暂时中断 · 正在重试';$('connection').className='offline';$('connection').title=e.message;$('dot').style.background='var(--red)';}setTimeout(poll,1000);}
+poll();
+</script>
+</html>

@@ -1,0 +1,9 @@
+{
+  "direction": "duplex",
+  "payload_bytes": 1472,
+  "mode": 1,
+  "packet_limit": "10000",
+  "gap_cycles": 80,
+  "seed": 1,
+  "timeout": 90
+}

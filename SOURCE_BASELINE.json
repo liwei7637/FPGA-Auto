@@ -1,0 +1,374 @@
+{
+  "baseline": "FPGA Auto 1.4.2 plus generic quick extension 2026-11-10",
+  "scope": "Tool source, logical debug profile and offline fixtures; no project inputs, physical machine bindings, runtime, vendor, caches or job state",
+  "files": [
+    {
+      "path": "MCP-DEPENDENCIES.json",
+      "sha256": "0bcce28f54668896c9686c0f9fb600dbabddccb5e1b91cb66af44085b904441d"
+    },
+    {
+      "path": "debug.py",
+      "sha256": "8d37bef51367994f097b88a36eb7232d800b72fc6ffa22dcabc4d8bbf464076a"
+    },
+    {
+      "path": "debug_tests/test_debug.py",
+      "sha256": "d761dba057ab6ac2e071406fe6db5d0fe996477f5266dfd581056c6ddb5a7e89"
+    },
+    {
+      "path": "debug_tests/test_debug_mcp.py",
+      "sha256": "9e2767ea5a9da6257dfd60fbdc2b9fcc9834ed36172a93bc6f35478ade6a688a"
+    },
+    {
+      "path": "debug_worker.py",
+      "sha256": "14a65f30ad25f8f5b56baf83d985a2d8d701fac28b62cdf117a5ab608f635e62"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "e933be9fc85dfe92c0ccdcb1e4f2948ade81b2b9f41661dbcb0cb64ebdb4bed7"
+    },
+    {
+      "path": "docs/BITSTREAM.md",
+      "sha256": "f8290dd1e252a6d0cec58e59ceb61d5f19c29ba53fe5559dd21214d7ea978251"
+    },
+    {
+      "path": "docs/CODEX-WORKFLOW.md",
+      "sha256": "6d6360ba74452b87913c4d7f398fa39f13a2f479e74923314a07f1290bb4ee19"
+    },
+    {
+      "path": "docs/QUICK.md",
+      "sha256": "4d82a04ee6f11642d04887dbc716408a81355f0146496c7b0b9f3ad2e8a05913"
+    },
+    {
+      "path": "docs/RELEASE-NOTES-1.4.0.md",
+      "sha256": "b34f4a5d4ae9b820e6c330d20dd75e18c83c5e7e94f8ee8be34c1550a8ccaf1e"
+    },
+    {
+      "path": "docs/RELEASE-NOTES-1.4.1.md",
+      "sha256": "f1ca66903a5e70d47d38944a1a892673dca56e572f05594c6d07431b429d6ff6"
+    },
+    {
+      "path": "docs/RELEASE-NOTES-1.4.2.md",
+      "sha256": "2c3fa8fcf174c966404895ba65724588b4581a1e8e4ca8b22710af4ec61f5acc"
+    },
+    {
+      "path": "docs/RELEASE-NOTES.md",
+      "sha256": "b0c87f82471697f69a0586cf731c28692dc87a6cb8aed3676539c309e5cc574c"
+    },
+    {
+      "path": "docs/VIVADO-DEBUG-MCP.md",
+      "sha256": "2984c8a2ae7a949327c39a35873d21121a696ede8443ddde54370845445415e4"
+    },
+    {
+      "path": "fpga.cmd",
+      "sha256": "0b1c9010ecb67dfaba7bdffb1acb3cf9e1019e6b39186f24c6ae603dd49263a5"
+    },
+    {
+      "path": "fpga.py",
+      "sha256": "bed4c56c436b350ab711a42148a96fcefd3407eead183a777eac3ffa0684a433"
+    },
+    {
+      "path": "fpga_auto/__init__.py",
+      "sha256": "769c81faf18811562a88ce2b45c032b44bada6d3e40317060f1a2c929d179ee7"
+    },
+    {
+      "path": "fpga_auto/background.py",
+      "sha256": "8c7c995ea2700bf812e90531fbe59156f9648099c401fc2a059e2d8913fd10dc"
+    },
+    {
+      "path": "fpga_auto/bitstream.py",
+      "sha256": "6372f1d81191a18bf4ecf2f26a00cb0ac4e3ac20a2f9fa5c81d2a63641d8c906"
+    },
+    {
+      "path": "fpga_auto/cli.py",
+      "sha256": "711bc7d005c690f757bb8c6cfe514e4dbbc543c8f7aca08795e85c1fa1f98901"
+    },
+    {
+      "path": "fpga_auto/config.py",
+      "sha256": "35aa083d5a7872d2dfc57cc5057237a5d5773796717b18a930819c5bec67c16f"
+    },
+    {
+      "path": "fpga_auto/constraint_loading.py",
+      "sha256": "48d140039d43800218b12f4d384e139bdb443f0e6cc18f67bd64836be0681d26"
+    },
+    {
+      "path": "fpga_auto/desktop.py",
+      "sha256": "af9de9c24b1272e6a8f730b956fbf679ee72d8eb93180cd4f5f230b2081bb13a"
+    },
+    {
+      "path": "fpga_auto/discovery.py",
+      "sha256": "4986384e099579bd5c0ed316a0d831f8282ed9a1a423e7ffb65175bb04ef13ca"
+    },
+    {
+      "path": "fpga_auto/jobs.py",
+      "sha256": "a1441c4da14247623f57f193d766bd53b90c5185805f631cf0785e82e5d55e6f"
+    },
+    {
+      "path": "fpga_auto/monitor.html",
+      "sha256": "f9954a8b1fafa815a372bd5eb59121b15bf01d6143495ea26a21fa03bab9f5d2"
+    },
+    {
+      "path": "fpga_auto/monitor.py",
+      "sha256": "0cf8e7b941a29bd38f6a194810f459d63b390234766db50e8e78baadba14690e"
+    },
+    {
+      "path": "fpga_auto/parser.py",
+      "sha256": "daee6cf422a798590bd484aebd6c483ab3ce4612f2727c5f7fc6cfc257e671a0"
+    },
+    {
+      "path": "fpga_auto/portable.py",
+      "sha256": "c707fcaa205ecde9cdd6f2da4972663882ffca234bffc084bbac910e0a0864d8"
+    },
+    {
+      "path": "fpga_auto/quick.py",
+      "sha256": "e48d1959840e85874fb2f40cdcf905a9ccb3d747b04d36def8b2f85b5931a7b5"
+    },
+    {
+      "path": "fpga_auto/results.py",
+      "sha256": "13987796dd481776eccd958e95baf64b560c88d0001ef74472c57b46bd2cf1ca"
+    },
+    {
+      "path": "fpga_auto/runner.py",
+      "sha256": "bbe50bf9cfed50424f9f0fe9815e4174ca38c8e78da638a103b6dde790461db6"
+    },
+    {
+      "path": "fpga_auto/vivado.py",
+      "sha256": "4b5aabce47f63f0d54dc4fea1e999fa7e5523cd5bef18740b1a288f455f582bb"
+    },
+    {
+      "path": "mcp_server.py",
+      "sha256": "765614846b7d45d154f1953581f99db80fe5d5bdc6f4974d2998b45b5dd6e8f2"
+    },
+    {
+      "path": "monitor.py",
+      "sha256": "ca3398edc3f6ca97922a29adf87c959800661e27b6bbfc3ae4c1dbe541471bd6"
+    },
+    {
+      "path": "portable.py",
+      "sha256": "c893d014805368241903466fcfa50800a4b9fbeecd6015e5340bc14e76cf92f9"
+    },
+    {
+      "path": "profiles/switch-udp-v1.json",
+      "sha256": "cce9fcc15697a9a9862c867d22e7d5b9de44cf073974cb86e9bc9d38832c4942"
+    },
+    {
+      "path": "requirements-mcp.lock",
+      "sha256": "e67e95154e42e955cb65bcf695877147033456957e53d22b67e6568bf982bd0a"
+    },
+    {
+      "path": "tcl/bit.tcl",
+      "sha256": "864bc9c88ec73e1321a39a9ead6d316b22f5443c2a39eb1b6ad02da66422f188"
+    },
+    {
+      "path": "tcl/build.tcl",
+      "sha256": "b3dc55730395d4e5aa3762d2913899446a3ced10c4c90914f45688d80befdc99"
+    },
+    {
+      "path": "tcl/check.tcl",
+      "sha256": "2fdb27cdb3495f8482f4a364a31b1da7c7935f48d2045734e9cf0467c28be006"
+    },
+    {
+      "path": "tcl/common.tcl",
+      "sha256": "592b62d39e1eaf744455057bdfd0ba55edf5b1dd2f5b1b64b52a5b5d678740ff"
+    },
+    {
+      "path": "tcl/debug_bridge.tcl",
+      "sha256": "abb9fcb245471392c1d2b28f00520b8068621080229194ab98719a673ecb8e44"
+    },
+    {
+      "path": "tcl/drc.tcl",
+      "sha256": "107a90e2c87531906a6ac459a015582ba7a6422dcdc7aaeaf1b45c2149971125"
+    },
+    {
+      "path": "tcl/impl.tcl",
+      "sha256": "0997c516fcf22eac1a22171234812e588ec3c5f31a46aac65f83906a5c9b7e76"
+    },
+    {
+      "path": "tcl/quick.tcl",
+      "sha256": "1f0ccf62fe2061fefe60a9ea775b1a0dfc4a2021bb3f8a7d35042550f4e1ba68"
+    },
+    {
+      "path": "tcl/quick_common.tcl",
+      "sha256": "a8c80fe2c42dc4c70cbd0200c023e52b2f38a3e80aac0a188e6f9ded3a087387"
+    },
+    {
+      "path": "tcl/synth.tcl",
+      "sha256": "24f016316b38b873003f142443a3fd3ff00b938381c3db6f7765df4873513a4d"
+    },
+    {
+      "path": "tcl/timing.tcl",
+      "sha256": "d636777d3439aa0abfe1da45761762aed56b4a99231f7056e7c36d399df69036"
+    },
+    {
+      "path": "tcl/write_bit.tcl",
+      "sha256": "15af7cc791090b5d056b1d9b8742fe54c8baf61728794eb2bb55361b49a50621"
+    },
+    {
+      "path": "tests/fake_bit_vivado.py",
+      "sha256": "ac8aafd2bb450911983fcb78e1411c997009acb27e531f229df0734afcc7f3ff"
+    },
+    {
+      "path": "tests/fake_vivado.py",
+      "sha256": "8be275988c14cfa949c4c8e502a41b5cdf74d80fa174a348fa0b3948a82d7330"
+    },
+    {
+      "path": "tests/fixtures/debug/PROVENANCE.json",
+      "sha256": "719bd89422cc12f547db196ccf515630471304518e81713933039bf4fa644eb6"
+    },
+    {
+      "path": "tests/fixtures/debug/gap0.tsv",
+      "sha256": "44fc82deb5e7ab547a117bb994197a0cdc16d3d8c7683947ec2e3072b355ec0d"
+    },
+    {
+      "path": "tests/fixtures/debug/gap80.tsv",
+      "sha256": "de1adfcb067cb2aea6ef7e97f7cb80328a089b30114988e1faef717c9bd24a6e"
+    },
+    {
+      "path": "tests/fixtures/debug/real_layout.ltx",
+      "sha256": "c56ace3f668a787b1963122c83abc44c73bf2126ddd4e89b58994c83dbaeb8c6"
+    },
+    {
+      "path": "tests/prepare_bit_regression.py",
+      "sha256": "9c9d9ac9f551fefcdfdbef424072a310be46b216c145d36e303b7d0ba05dc23e"
+    },
+    {
+      "path": "tests/prepare_bit_regression.tcl",
+      "sha256": "d9dc3fa7627417286320d197cb239f37eaa70cbf42031030d74546631a45f1a5"
+    },
+    {
+      "path": "tests/preview_monitor.py",
+      "sha256": "74bfbc5a57a5d025499ed96579161fe30452ebbad429850bf34af4b1f96d195a"
+    },
+    {
+      "path": "tests/run_offline_suite.py",
+      "sha256": "43f2ff44858cf48e1c7a83e932466ae978262f7abe434ced7c1fcb85daa77889"
+    },
+    {
+      "path": "tests/test_background.py",
+      "sha256": "6537581ba6351b7077541d0810dd8721adacece3ebb16e2983053c3f471dab68"
+    },
+    {
+      "path": "tests/test_bitstream.py",
+      "sha256": "258c9f0c1c9f15caa92254519f4cc32f90574ccfbd3d1aeadb9bd3719e7ff2c3"
+    },
+    {
+      "path": "tests/test_desktop.py",
+      "sha256": "e467729aacea3d6cc951bf5bcb99b21c2d85d4f61ba05196da14310241bc2c74"
+    },
+    {
+      "path": "tests/test_discovery.py",
+      "sha256": "412307f81c4b0ff0503866382f3944204b8b75d986217d2d8ae307947fae01f1"
+    },
+    {
+      "path": "tests/test_monitor.py",
+      "sha256": "3141e661d52072bd88bcb36a68f87edc49e9688c36fe7904968075c86b774b7b"
+    },
+    {
+      "path": "tests/test_quick.py",
+      "sha256": "6dd9223e2130a4ddbe811374e2985688343cda97d4e700b4e0b864996ef239a3"
+    },
+    {
+      "path": "tests/test_read_only_check.py",
+      "sha256": "94e4f9abe80235f563627991aa4f5b6cc32b02fcc5bc2b44b9a319ff7f3636eb"
+    },
+    {
+      "path": "tests/test_wakeup.py",
+      "sha256": "6dd10fa84bbfb5fb6d8b4640a7442bef97fb857bd27b09bbe9f51b541cfaa4dd"
+    },
+    {
+      "path": "tests/verify_debug_2020_2.py",
+      "sha256": "eb1e40d446899018434bb229a70b6226e8c82efdb79999b07113bd1c9700b025"
+    },
+    {
+      "path": "tests/verify_debug_2020_2.tcl",
+      "sha256": "432529886587fd4d411ae177375928ebb879c8f36e967133c69e2c879a13fbc0"
+    },
+    {
+      "path": "tests/verify_desktop_wakeup.py",
+      "sha256": "6e34fb2e2eadb7bc1506e2e90c093349b801921e7852adefce0c1e60ff109278"
+    },
+    {
+      "path": "tests/verify_vivado_steps.py",
+      "sha256": "bcfbd81f420f9315d1bfc76c360578ea842abdcbec405719bdfdc1f58cfce238"
+    },
+    {
+      "path": "tests/verify_vivado_steps.tcl",
+      "sha256": "a671e2451fc8ed8de764e595892baf7ced18647779a238f8b74d5e438853cccf"
+    },
+    {
+      "path": "vivado-debug-mcp.cmd",
+      "sha256": "af4db2c65f6adebe3f71d6351f3fd17d1b6fab4e3e7fab6ab9c7f8fcfc85b7d2"
+    },
+    {
+      "path": "vivado-debug.cmd",
+      "sha256": "fe7b3a98503d1dfbca8c28f831facff3a33883713980d30c17dce6e7f516073c"
+    },
+    {
+      "path": "vivado_debug/__init__.py",
+      "sha256": "ceea9f00a2c547d08066d394cdd243b7612891ffa273b15ad659ae1d9cca7ac0"
+    },
+    {
+      "path": "vivado_debug/analysis.py",
+      "sha256": "9171b44c6f2d003f5df171dbd5a7cdaa6389bd7b4419717c9bbc047aa9e8bc4c"
+    },
+    {
+      "path": "vivado_debug/backend.py",
+      "sha256": "a0a0df0c6aded783e42defe36198e42ffe471e05cac3e8b59d8d55fec14e6982"
+    },
+    {
+      "path": "vivado_debug/bootstrap.py",
+      "sha256": "04a097e478c537cd7be80a153bf3a980395aa61f074fb1f7a0ae9d1547c5f00f"
+    },
+    {
+      "path": "vivado_debug/cli.py",
+      "sha256": "6ab3657820270dbce41be0c654b168b617190c604f9b5cd04c08bbfa76726c0e"
+    },
+    {
+      "path": "vivado_debug/common.py",
+      "sha256": "d81b0a3a2055a5c2f828c9ff7b31e1efad5ad0d86a9ff190101d13a434eb4e8e"
+    },
+    {
+      "path": "vivado_debug/exports.py",
+      "sha256": "44a737a7e1668f6605ea9f327ceef66b814391e96e75f7c3f61dd7fcb8e7dc76"
+    },
+    {
+      "path": "vivado_debug/ltx.py",
+      "sha256": "9e4e442ceefe1b4c8c3ed1bdfbc0112f283af471fa616b77a7f19050996d6aac"
+    },
+    {
+      "path": "vivado_debug/mcp_server.py",
+      "sha256": "cd2096e1383785584c55ca8434673dd0d7eb146401eec4ecc13c7dc42a3c93b1"
+    },
+    {
+      "path": "vivado_debug/mock.py",
+      "sha256": "db9d20212b877defc3b43cf9639eb5258c4b51be9251641ef4c2f3fc55bbc124"
+    },
+    {
+      "path": "vivado_debug/plugins/__init__.py",
+      "sha256": "e5e7342b60c15980d96fe120a13caf47aa97125d44e0d1d84edfe9b716dd95f5"
+    },
+    {
+      "path": "vivado_debug/plugins/mac_pcap.py",
+      "sha256": "cbb808776f3f6813239dad2dce3e0893e55e499494d0923acd90ea2e72033073"
+    },
+    {
+      "path": "vivado_debug/plugins/switch_udp.py",
+      "sha256": "072049839eb956c797e23aca45ac3112cc2b77e88b23b9d233db8c1aa2ff2465"
+    },
+    {
+      "path": "vivado_debug/profile.py",
+      "sha256": "4a7698d9cc3684d59a7c9219694868a5c91db795de90b5ae35e0333a22825248"
+    },
+    {
+      "path": "vivado_debug/service.py",
+      "sha256": "9aa04376588fb0f1587ef6fb6605e5d48986165420764d20e098c29a1aa79a3f"
+    },
+    {
+      "path": "vivado_debug/sessions.py",
+      "sha256": "cdff745b3fb0b63328e132ecf0e6827991dc633070258597452bcab7f0c451d4"
+    },
+    {
+      "path": "worker.py",
+      "sha256": "ad32111b1308034df2be73f97fd2fedb38623297192c4d425b3e01d8e5988bc5"
+    }
+  ]
+}

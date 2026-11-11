@@ -1,0 +1,17 @@
+{
+  "scope": "Historical replay fixtures from RUN-20261106-DUAL-UDP-01; not new hardware results",
+  "files": {
+    "real_layout.ltx": {
+      "sha256": "c56ace3f668a787b1963122c83abc44c73bf2126ddd4e89b58994c83dbaeb8c6",
+      "source": "fpga/switch_udp_stack/vivado2020.2/switch_udp_stack.runs/impl_traffic_20261106_01/switch_udp_stack_top.ltx"
+    },
+    "gap80.tsv": {
+      "sha256": "de1adfcb067cb2aea6ef7e97f7cb80328a089b30114988e1faef717c9bd24a6e",
+      "source": "build/sudp_hw_20261106_01/stream02_gap80/snapshots.tsv"
+    },
+    "gap0.tsv": {
+      "sha256": "44fc82deb5e7ab547a117bb994197a0cdc16d3d8c7683947ec2e3072b355ec0d",
+      "source": "build/sudp_hw_20261106_01/stream01/snapshots.tsv"
+    }
+  }
+}
